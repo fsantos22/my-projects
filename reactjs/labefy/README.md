@@ -1,9 +1,14 @@
 # Labefy
 
+## ✨ Technologies
+This project was built with the following technologies:
+
+* React.js
+* Axios
+* Styled-Components
+
+## 💻 Project
 Created: 15/01/2021
-
-Surge link do projeto: http://squeamish-birthday.surge.sh/
-
 # Functionalities:
 - Creation of new Playlist
 - Adding music to an existing playlist
@@ -13,3 +18,18 @@ Surge link do projeto: http://squeamish-birthday.surge.sh/
 - Complete list of songs in each playlist
 - Possibility to delete songs
 - Audio player included
+
+## Surge
+[Labefy](http://squeamish-birthday.surge.sh/)
+
+## 🚀 How to execute
+* Download de folder
+ ```
+* Install the dependencies with
+ ```
+  npm install
+ ```
+* Start the server
+ ```
+ npm run start
+ ```

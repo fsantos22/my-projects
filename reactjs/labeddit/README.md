@@ -17,7 +17,6 @@ Labeddit is a feed page to post and comment about anything. The functionalities 
 
 ## 🚀 How to execute
 * Download de folder
- ```
 * Install the dependencies with
  ```
   npm install

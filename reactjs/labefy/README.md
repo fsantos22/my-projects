@@ -24,7 +24,6 @@ Created: 15/01/2021
 
 ## 🚀 How to execute
 * Download de folder
- ```
 * Install the dependencies with
  ```
   npm install

@@ -16,7 +16,6 @@ This project is a generic Tinder and has an API with random profiles :)
 
 ## 🚀 How to execute
 * Download de folder
- ```
 * Install the dependencies with
  ```
   npm install

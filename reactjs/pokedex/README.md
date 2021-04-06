@@ -18,7 +18,6 @@ I made this project after 3 weeks studying about React. The goal is to choose a 
 
 ## 🚀 How to execute
 * Download de folder
- ```
 * Install the dependencies with
  ```
   npm install

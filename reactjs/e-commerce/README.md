@@ -16,7 +16,6 @@ This is a generic E-commerce with filter options by value and name.
 
 ## 🚀 How to execute
 * Download de folder
- ```
 * Install the dependencies with
  ```
   npm install

@@ -22,7 +22,6 @@ This project consists on a marketplace to offer freelancer jobs.
 
 ## 🚀 How to execute
 * Download de folder
- ```
 * Install the dependencies with
  ```
   npm install

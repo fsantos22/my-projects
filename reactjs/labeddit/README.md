@@ -9,7 +9,7 @@ This project was built with the following technologies:
 * Styled-Components
 
 ## 💻 Project
-Created: 27/02/2020
+Created: 27/02/2021
 Labeddit is a feed page to post and comment about anything. The functionalities are similar to Reddit, like vote system and comment section.
 
 ## Surge

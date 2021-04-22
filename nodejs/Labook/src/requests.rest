@@ -1,0 +1,96 @@
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "name": "carlos",
+    "email": "carlos@labenu.com.br",
+    "password": "123456",
+    "role": "normal"
+}
+
+###
+# @name login
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "maria@labenu.com.br",
+    "password": "123456"
+}
+
+###
+@token = {{login.response.body.token}}
+POST http://localhost:3003/posts
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "photo": "aafgah.jpg",
+    "description": "aafgha",
+    "type": "normal"
+}
+
+###
+@token = {{login.response.body.token}}
+GET http://localhost:3003/posts/show/a54a8029_97c9_4a66_ab16_ccde09d1e201
+Content-Type: application/json
+Authorization: {{token}}
+
+###
+@token = {{login.response.body.token}}
+POST http://localhost:3003/users/friend
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "friendId": "cefa061c_cf47_4087_a1a1_b3a8162bbdf4"
+}
+
+###
+@token = {{login.response.body.token}}
+POST http://localhost:3003/users/unfriend
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "friendId": "2d132578_69eb_4ebf_ae32_58aaecec22c5"
+}
+
+###
+@token = {{login.response.body.token}}
+GET http://localhost:3003/posts/feed
+Content-Type: application/json
+Authorization: {{token}}
+
+###
+GET http://localhost:3003/posts/filter?type=event
+
+###
+@token = {{login.response.body.token}}
+POST http://localhost:3003/posts/like
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "postId": "17b4338e_ea66_4582_91de_902e61303667"
+}
+
+###
+@token = {{login.response.body.token}}
+POST http://localhost:3003/posts/dislike
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "postId": "17b4338e_ea66_4582_91de_902e61303667"
+}
+
+###
+@token = {{login.response.body.token}}
+POST http://localhost:3003/posts/39f9fbe6_f31b_4fc8_b869_84c4cff6babd/comment
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "comment": "Oi, estou comentando :)"
+}

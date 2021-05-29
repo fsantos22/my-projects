@@ -1,0 +1,152 @@
+# Criar estudante
+POST http://localhost:3003/student/create
+Content-Type: application/json
+
+{
+    "category": "student",
+    "name": "user",
+    "email": "user@labenu.com.br",
+    "birthdate": "01/01/2000" 
+}
+
+###
+# Criar professor
+POST http://localhost:3003/teacher/create
+Content-Type: application/json
+
+{
+    "category": "student",
+    "name": "user",
+    "email": "user@labenu.com.br",
+    "birthdate": "01/01/2000" 
+}
+
+###
+# Criar hobby
+POST http://localhost:3003/hobby/create
+Content-Type: application/json
+
+{
+    "title": "Codar"
+}
+
+###
+# Criar especialidade
+POST http://localhost:3003/speciality/create
+Content-Type: application/json
+
+{
+    "title": "React000"
+}
+
+###
+# Criar turma
+POST http://localhost:3003/class/create
+Content-Type: application/json
+
+{
+    "name": "Muñoz",
+    "period": "Noturno",
+    "startDate": "30/02/2020",
+    "endDate": "31/10/2021",
+    "module": 1
+}
+
+###
+# Cadastrar aluno em uma turma
+POST http://localhost:3003/student/class/assign
+Content-Type: application/json
+
+{
+    "id": 10,
+    "classId": 2
+}
+
+###
+# Cadastrar professor em uma turma
+POST http://localhost:3003/teacher/class/assign
+Content-Type: application/json
+
+{
+    "id": 1,
+    "classId": 1
+}
+
+###
+# Atribuir hobby a um estudante
+POST http://localhost:3003/student/hobby/assign
+Content-Type: application/json
+
+{
+    "id": 1,
+    "hobbyId": 1
+}
+
+###
+# Atribuir especialidade a um professor
+POST http://localhost:3003/teacher/speciality/assign
+Content-Type: application/json
+
+{
+    "id": 1,
+    "scpecialityId": 1
+}
+
+###
+# Pegar estudante pelo ID
+GET http://localhost:3003/student/10000
+
+###
+# Pegar professor pelo ID
+GET http://localhost:3003/teacher/162
+
+###
+# Pegar estudantes por turma
+GET http://localhost:3003/student/list/200
+
+###
+# Pegar professores por turma
+GET http://localhost:3003/teacher/list/1
+
+###
+# Alterar módulo da turma
+PUT http://localhost:3003/class/module/edit
+Content-Type: application/json
+
+{
+    "id": 1,
+    "module": 1
+}
+
+###
+# Alterar turma do aluno
+PUT http://localhost:3003/student/class/edit
+Content-Type: application/json
+
+{
+    "id": 1,
+    "classId": 1
+}
+
+###
+# Alterar turma do professor
+PUT http://localhost:3003/teacher/class/edit
+Content-Type: application/json
+
+{
+    "id": 1,
+    "classId": 1
+}
+
+###
+# Remover estudate da base
+DELETE http://localhost:3003/student/1/delete
+
+# Remover professor da base
+DELETE http://localhost:3003/teacher/1/delete
+
+# Remover estudate da turma
+DELETE http://localhost:3003/student/1/class/1/delete
+
+# Remover professor da turma
+DELETE http://localhost:3003/teacher/1/class/1/delete

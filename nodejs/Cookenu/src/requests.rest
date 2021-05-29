@@ -1,0 +1,105 @@
+# SIGN UP
+POST http://localhost:3003/signup
+Content-Type: application/json
+
+{
+    "name": "astrodev",
+    "email": "astrodev@labenu.com.br",
+    "password": "123456"
+}
+
+###
+# LOGIN
+# @name login
+POST http://localhost:3003/login
+Content-Type: application/json
+
+# {
+#     "email": "admin@labenu.com.br",
+#     "password": "123456"
+# }
+{
+    "email": "admin@labenu.com.br",
+    "password": "123456"
+}
+
+###
+
+@token = {{login.response.body.token}}
+
+GET http://localhost:3003/users/profile
+Content-Type: application/json
+Authorization: {{token}}
+
+###
+
+POST http://localhost:3003/users/follow
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "followingId": "6ce52491_fb98_4f31_a6af_13eb35bfd0f6"
+}
+
+###
+
+POST http://localhost:3003/recipes/create
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "title": "LASANHA TRADICIONAL",
+    "description": "Ingredientes:\n1 massa de lasanha (pronta)\n500 g de presunto;\n500 g de queijo mussarela;\n500 g carne moída;\n1 massa de tomate pronta;\nsal a gosto;\npimenta-do-reino a gosto;\norégano a gosto;\n\nPreparo:\n1. Cozinhe a massa da lasanha em aproximadamente em 2 litros de água por 5 minutos.\n2. Em uma panela cozinhe a carne moída, depois de cozida coloque molho de tomate, o sal e temperos a gosto.\n3. Comece montando com uma camada de molho, a massa da lasanha, o presunto e o queijo.\n4. Faça esse processo até tudo terminar.\n5. Aqueça o forno a 180º C durante 5 minutos.\n6. Coloque a lasanha no forno de 20 a 30 minutos."
+}
+
+###
+
+GET http://localhost:3003/recipes/76f35e42_9257_4d87_a754_dd659702a05a
+Content-Type: application/json
+Authorization: {{token}}
+
+###
+
+GET http://localhost:3003/users/feed
+Content-Type: application/json
+Authorization: {{token}}
+
+###
+
+POST http://localhost:3003/users/unfollow
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "followingId": "6ce52491_fb98_4f31_a6af_13eb35bfd0f6"
+}
+
+###
+
+PUT http://localhost:3003/recipes/edit/ff188dc4_300b_40e8_bab9_37dab298ee78
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "title": "brig"
+}
+
+###
+
+DELETE http://localhost:3003/recipes/delete
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "id": "e4474386_dda7_4d7f_9441_be71d368b567"
+}
+
+###
+
+DELETE http://localhost:3003/users/delete
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "id": "7e9e3d4b_03cd_4f46_a6a7_0680ee29bdee"
+}

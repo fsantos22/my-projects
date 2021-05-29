@@ -1,0 +1,86 @@
+# @name signup
+POST http://localhost:3000/users/signup
+Content-Type: application/json
+
+{
+    "name": "User",
+    "email": "user@lama.com",
+    "password": "123456",
+    "role": "normal"
+}
+
+###
+
+# @name login
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "email": "user@lama.com",
+    "password": "123456"
+}
+
+###
+
+# @name registerBand
+@token = {{login.response.body.token}}
+POST http://localhost:3000/bands/register
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "name": "LabeRock13",
+    "genre": "Rock",
+    "responsible": "Admin"
+}
+
+###
+
+# @name searchBand
+GET http://localhost:3000/bands/search?name=labeRock
+
+###
+# @name registerShow
+@token = {{login.response.body.token}}
+POST http://localhost:3000/shows/register
+Content-Type: application/json
+Authorization: {{token}}
+
+{ 
+    "bandId": "af717f3c-8a22-45a4-a4d1-4f1ffbbb9c9c", 
+    "day": "FRIDAY", 
+    "startTime": 12, 
+    "endTime": 14 
+}
+
+###
+# @name getShowsByDay
+@token = {{login.response.body.token}}
+GET http://localhost:3000/shows/friday
+Content-Type: application/json
+
+###
+# @name createTicket
+@token = {{login.response.body.token}}
+POST http://localhost:3000/tickets/create
+Content-Type: application/json
+Authorization: {{token}}
+
+{ 
+    "ticketName":"SEÇÃO A", 
+    "showId":"53dbe4e2-eaf9-4339-a88a-129f5a522447", 
+    "price":99, 
+    "totalTickets":100 
+}
+
+###
+# @name buyTicket
+@token = {{login.response.body.token}}
+POST http://localhost:3000/tickets/buy
+Content-Type: application/json
+Authorization: {{token}}
+
+{ 
+    "ticketId":"83f637fe-66b2-440d-a0a9-7a4ce790e577", 
+    "quantity":1
+}

@@ -1,0 +1,103 @@
+# 1 Criar usuário 
+POST http://localhost:3003/user
+Content-Type: application/json
+
+{
+    "name": "Astro Dev",
+	"nickname": "astrodev",
+	"email": "astro@dev.com"
+}
+
+###
+# 2 Pegar usuário pelo id
+GET http://localhost:3003/user/1616869823472
+
+###
+# 3 Editar usuário
+PUT http://localhost:3003/user/edit/1616869823472
+Content-Type: application/json
+
+{
+    "name": "José da Silva",
+    "nickname": "ze123"
+}
+
+###
+# 4 Criar tarefa
+POST http://localhost:3003/task
+Content-Type: application/json
+
+{
+	"title": "Teste2",
+	"description": "testando a api",
+	"limitDate": "29/03/2021",
+	"creatorUserId": "1616869823472"
+}
+
+###
+# 5/11 Pegar tarefa pelo id
+GET http://localhost:3003/task/1616890832536
+
+###
+# 6 Pegar todos os usuários
+GET http://localhost:3003/user/all
+
+###
+# 7 Pegar tarefas criadas por um usuário
+GET http://localhost:3003/task?creatorUserId=1616869823472
+
+###
+# 8 Pesquisar usuário
+GET http://localhost:3003/user?query=ze
+
+###
+# 9/16 Atribuir mais de um usuário responsável a uma tarefa
+POST http://localhost:3003/task/responsible
+Content-Type: application/json
+
+{
+	"taskId": "1616949755168",
+	"responsibleUserIds": ["1616890664843","1616869823472"]
+}
+
+###
+# 10 Pegar usuários responsáveis por uma tarefa
+GET http://localhost:3003/task/1616890832536/responsible
+
+###
+# 12/18 Atualizar o status de várias tarefas
+PUT http://localhost:3003/task/status/edit
+Content-Type: application/json
+
+{
+    "status": "to_do",
+    "taskIds": "1616869856996"
+}
+
+###
+# 13 Pegar todas as tarefas por status 
+GET http://localhost:3003/task?status=done
+
+###
+# 14 Pegar todas as tarefas atrasadas 
+GET http://localhost:3003/task/delayed
+
+###
+# 15 Retirar um usuário responsável de uma tarefa
+DELETE http://localhost:3003/task/1616890832536/responsible/1616869823472
+
+###
+# 17 Procurar tarefa por termos
+GET http://localhost:3003/task?query=azvd
+
+###
+# 19 Deletar tarefa
+DELETE http://localhost:3003/task/1616949515927
+
+###
+# 20 Deletar usuário
+DELETE http://localhost:3003/user/1616950039266
+
+###
+# 21 Pegar todas as tarefas
+GET http://localhost:3003/task/all
